@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "author": "arrow",
   "scripts": {
-    "dev": "vuepress dev . --open --host \"localhost\"",
-    "build": "vuepress build ."
+    "dev": "vuepress dev note --open --host \"localhost\"",
+    "build": "vuepress build note"
   },
   "devDependencies": {
     "@vuepress-reco/vuepress-plugin-bgm-player": "^1.1.3",
