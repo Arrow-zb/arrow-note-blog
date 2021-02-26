@@ -1,0 +1,9 @@
+version: '3'
+services:
+  arrow-note:
+    image: nginx
+    ports:
+      - "6099:80"
+    volumes:
+      - "./public:/usr/share/nginx/html"  
+    restart: always
