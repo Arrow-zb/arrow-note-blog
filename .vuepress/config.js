@@ -9,71 +9,67 @@ module.exports = {
   theme: 'reco',
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/', icon: 'reco-home' },
-      { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
-      { text: 'Docs', 
+      { text: '主页', link: '/', icon: 'reco-home' },
+      { text: '回顾', link: '/timeline/', icon: 'reco-date' },
+      // { text: 'Docs', 
+      //   icon: 'reco-message',
+      //   items: [
+      //     { text: 'vuepress-reco', link: '/docs/theme-reco/' }
+      //   ]
+      // },
+      { text: '我', 
         icon: 'reco-message',
         items: [
-          { text: 'vuepress-reco', link: '/docs/theme-reco/' }
-        ]
-      },
-      { text: 'Contact', 
-        icon: 'reco-message',
-        items: [
-          { text: 'GitHub', link: 'https://github.com/recoluan', icon: 'reco-github' }
+          { text: 'GitHub', link: 'https://github.com/Arrow-zb', icon: 'reco-github' },
+          { text: 'CSDN', link: 'https://arrow.blog.csdn.net/', icon: 'reco-csdn' }
         ]
       }
     ],
-    sidebar: {
-      '/docs/theme-reco/': [
-        '',
-        'theme',
-        'plugin',
-        'api'
-      ]
-    },  
+    // sidebar: {
+    //   '/docs/theme-reco/': [
+    //     '',
+    //     'theme',
+    //     'plugin',
+    //     'api'
+    //   ]
+    // },  
     type: 'blog',
     // 博客设置
     blogConfig: {
       category: {
-        location: 2, // 在导航栏菜单中所占的位置，默认2
-        text: 'Category' // 默认 “分类”
+        location: 2,
+        text: '归类' 
       },
       tag: {
-        location: 3, // 在导航栏菜单中所占的位置，默认3
-        text: 'Tag' // 默认 “标签”
+        location: 3,
+        text: '标签'
       }
     },
     friendLink: [
       {
-        title: '午后南杂',
-        desc: 'Enjoy when you can, and endure when you must.',
-        email: '1156743527@qq.com',
-        link: 'https://www.recoluan.com'
+        title: 'CSDN',
+        desc: 'Share my all',
+        // email: '1156743527@qq.com',
+        link: 'https://arrow.blog.csdn.net/'
       },
-      {
-        title: 'vuepress-theme-reco',
-        desc: 'A simple and beautiful vuepress Blog & Doc theme.',
-        avatar: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-        link: 'https://vuepress-theme-reco.recoluan.com'
-      },
+      // {
+      //   title: 'vuepress-theme-reco',
+      //   desc: 'A simple and beautiful vuepress Blog & Doc theme.',
+      //   avatar: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+      //   link: 'https://vuepress-theme-reco.recoluan.com'
+      // },
     ],
     logo: '/logo.png',
     // 搜索设置
     search: true,
     searchMaxSuggestions: 10,
     // 自动形成侧边导航
-    // sidebar: 'auto',
-    // 最后更新时间
+    sidebar: 'auto',
     lastUpdated: 'Last Updated',
-    // 作者
-    author: 'reco_luan',
-    // 作者头像
+    author: 'arrow',
     authorAvatar: '/avatar.png',
-    // 备案号
-    record: 'xxxx',
-    // 项目开始时间
-    startYear: '2017'
+    record: '蜀ICP备19036961号-1',
+    startYear: '2017',
     /**
      * 密钥 (if your blog is private)
      */
@@ -88,12 +84,80 @@ module.exports = {
      * valine 设置 (if you need valine comment )
      */
 
-    // valineConfig: {
-    //   appId: '...',// your appId
-    //   appKey: '...', // your appKey
-    // }
+    valineConfig: {
+      appId: 'qOJeJWv99OvLCHGMI82CBTAM-gzGzoHsz',// your appId
+      appKey: 'Hkl1ml7O9W0atFRaqGmUYt5K', // your appKey
+    }
   },
   markdown: {
     lineNumbers: true
-  }
+  },
+  plugins: [
+    [
+       'dynamic-title',
+       {
+          showIcon: '/favicon.ico',
+          showText: '(/≧▽≦/)初出茅庐不可欺！',
+          hideIcon: '/favicon.ico',
+          hideText: '(●—●)莫欺少年穷！',
+          recoverTime: 2000,
+       },
+    ],
+    [
+      'ribbon',
+      {
+         size: 60, // width of the ribbon, default: 90
+         opacity: 0.1, // opacity of the ribbon, default: 0.3
+         zIndex: -1, // z-index property of the background, default: -1
+      },
+    ],
+    [
+      '@vuepress-reco/vuepress-plugin-kan-ban-niang',
+      {
+        theme: ['miku'],
+        messages: { 
+          welcome: '欢迎来到arrow note！', 
+          home: '没有什么比努力更幸福了！', 
+          theme: '莫欺少年穷！', 
+          close: '天官赐福！' 
+        }
+      },
+    ],
+  //   [
+  //     'meting',
+  //     { 
+  //       meting: {
+  //         server: "netease",
+  //         type: "playlist",
+  //         mid: "966357361",
+  //        },
+  //       aplayer: {
+  //         mini: true,
+  //         theme: "#b7daff",
+  //         autoplay: true
+  //       },
+  //     }
+  //  ],
+    [
+      '@vuepress-reco/vuepress-plugin-bgm-player',
+      {
+        audios: [
+          {
+            name: 'Heartbeats',
+            artist: 'Amy Diamond',
+            url: '/bgm/heartbeats.mp3',
+            cover: '/bgm/heartbeats.jpg'
+          }
+        ],  
+        autoShrink: true,
+        position: { 
+          left: '10px', 
+          bottom: '50px', 
+          'z-index': '999999'
+        },
+        floatStyle: { bottom: '100px', 'z-index': '999999' },
+        autoPlay: true
+      },
+    ]
+ ]
 }  
